@@ -1,10 +1,9 @@
 package com.xiong.zookeeper.zkClient;
 
 import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,12 +36,16 @@ public class DistributedClient {
         return serverList;
     }
 
+    //todo: 需要重写
     private void getConnect() {
-        zooKeeper = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
-            @Override
-            public void process(WatchedEvent event) {
+        int sessionTimeout = 100;
+        String connectString = "master";
+        try {
+            zooKeeper = new ZooKeeper(connectString, sessionTimeout, event -> {
 
-            }
-        });
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
