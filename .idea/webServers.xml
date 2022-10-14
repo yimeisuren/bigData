@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0af8d84a-6c46-436e-92d3-aee66cfd20d5" name="master (project level)">
+        <fileTransfer accessType="SFTP" host="192.168.68.100" port="22" sshConfigId="719d17ad-186a-47cd-84ac-ae4b5a4fa9a1" sshConfig="master">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="edc87704-886c-4439-801b-c205226ba99c" name="slave001 (project level)">
+        <fileTransfer accessType="SFTP" host="192.168.68.101" port="22" sshConfigId="ec8b273c-ce14-4db6-98c5-47a5fea3e613" sshConfig="slave001">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="302ec6eb-cdd3-40f4-a41b-f7e143348dde" name="slave002 (project level)">
+        <fileTransfer accessType="SFTP" host="192.168.68.102" port="22" sshConfigId="494b3bb3-76a4-4a37-81af-f5c061ade303" sshConfig="slave002">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>hadoop (project level)</name>
+        <servers>
+          <name value="master (project level)" />
+          <name value="slave001 (project level)" />
+          <name value="slave002 (project level)" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>
